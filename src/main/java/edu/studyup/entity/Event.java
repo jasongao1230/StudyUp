@@ -19,7 +19,7 @@ public class Event {
 	private String name;
 	private Location location;
 	private List<Student> students;
-	private Date date;
+	private  Date date;
 
 	public String getName() {
 		return name;
@@ -45,6 +45,7 @@ public class Event {
 		this.students = students;
 	}
 
+
 	public Date getDate() {
 		if (date == null)
 			return null;
@@ -57,6 +58,7 @@ public class Event {
 			this.date = null;
 		else
 			this.date = (Date)date.clone();
+
 	}
 
 	public int getEventID() {

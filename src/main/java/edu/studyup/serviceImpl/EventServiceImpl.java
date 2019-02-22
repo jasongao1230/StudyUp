@@ -1,6 +1,7 @@
 package edu.studyup.serviceImpl;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -34,8 +35,10 @@ public class EventServiceImpl implements EventService {
 		Map<Integer, Event> eventData = DataStorage.eventData;
 		List<Event> activeEvents = new ArrayList<>();
 		
-		for (Integer key : eventData.keySet()) {
-			Event ithEvent= eventData.get(key);
+
+		for (Map.Entry< Integer, Event >  key : eventData.entrySet()) {
+			Event ithEvent= key.getValue();
+
 			activeEvents.add(ithEvent);
 		}
 		return activeEvents;
@@ -46,8 +49,10 @@ public class EventServiceImpl implements EventService {
 		Map<Integer, Event> eventData = DataStorage.eventData;
 		List<Event> pastEvents = new ArrayList<>();
 		
-		for (Integer key : eventData.keySet()) {
-			Event ithEvent= eventData.get(key);
+
+		for (Map.Entry< Integer, Event >  key : eventData.entrySet()) {
+			Event ithEvent= key.getValue();
+
 			// Checks if an event date is before today, if yes, then add to the past event list.
 			if(ithEvent.getDate().before(new Date())) {
 				pastEvents.add(ithEvent);

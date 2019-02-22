@@ -47,7 +47,9 @@ class EventServiceImplTest {
 		//Create Event1
 		Event event = new Event();
 		event.setEventID(1);
-		event.setDate( new Date(119,10,1));
+
+		event.setDate(new Date(119,10,1));
+
 		event.setName("Event 1");
 		Location location = new Location(-122, 37);
 		event.setLocation(location);
