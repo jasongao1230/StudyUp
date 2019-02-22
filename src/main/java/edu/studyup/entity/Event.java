@@ -46,11 +46,17 @@ public class Event {
 	}
 
 	public Date getDate() {
-		return date;
+		if (date == null)
+			return null;
+		else
+			return (Date) date.clone();
 	}
 
 	public void setDate(Date date) {
-		this.date = date;
+		if (this.date==null)
+			this.date = null;
+		else
+			this.date = (Date)date.clone();
 	}
 
 	public int getEventID() {
