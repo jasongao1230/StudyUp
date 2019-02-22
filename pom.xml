@@ -55,6 +55,27 @@
 				</dependencies>    
 			</plugin>
 			<plugin>
+			<groupId>com.github.spotbugs</groupId>
+			<artifactId>spotbugs-maven-plugin</artifactId>
+			<version>3.1.10</version>
+				<dependencies>
+					<!-- overwrite dependency on spotbugs if you want to specify the version of spotbugs -->
+					<dependency>
+						<groupId>com.github.spotbugs</groupId>
+						<artifactId>spotbugs</artifactId>
+						<version>3.1.11</version>
+					</dependency>
+				</dependencies>
+				<executions>
+          			<execution>
+            		<id>execution1</id>
+            		<goals>
+              			<goal>check</goal>
+            		</goals>
+          			</execution>
+        		</executions>
+			</plugin>
+			<plugin>
 			    <groupId>org.eluder.coveralls</groupId>
 			    <artifactId>coveralls-maven-plugin</artifactId>
 			    <version>4.3.0</version>
